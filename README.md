@@ -1,5 +1,23 @@
-# Haipy
+## Haipy
+## What is it?
 
-This is a simple example package. You can use
-[Github-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
-to write your content.
+A CLI tool to identify hash types (hash type identifier).
+
+This project is a Python porting of "haiti" https://github.com/noraj/haiti written in Ruby.
+
+## Features
+
+- 483+ hash types detected
+- Modern algorithms supported (SHA3, Keccak, Blake2, etc.)
+- Hashcat and John the Ripper references
+- CLI tool
+- Hackable
+
+## Installation
+To install from the source directory:
+pip install .
+
+## Author
+
+Ported by @gcarmix, derived from haiti by @noraj
+
