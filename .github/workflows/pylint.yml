@@ -21,4 +21,4 @@ jobs:
         pip install importlib_resources
     - name: Analysing the code with pylint
       run: |
-        pylint --max-nested-blocks 8 --max-branches 18 $(git ls-files '*.py')
+        pylint --max-line-length 130 --max-nested-blocks 8 --max-branches 18 $(git ls-files '*.py')
