@@ -13,13 +13,23 @@ This project is a Python porting of "haiti" https://github.com/noraj/haiti writt
 - CLI tool
 - Hackable
 ## Usage
+```
 haipy [hash code to guess]
+```
 
-![terminal view](haipy_cli.png)
+![terminal view](haipycli.png)
 
 ## Installation
+
+To install from pypi:
+```
+pip install haipy
+```
+
 To install from the source directory:
+```
 pip install .
+```
 
 ## Author
 
