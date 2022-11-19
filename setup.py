@@ -12,7 +12,7 @@ def read(fname):
 setup(
   # METADATA...
   name = 'haipy',
-  version = '1.0.0',
+  version = '1.0.2',
   url = 'https://github.com/gcarmix/haipy',
   download_url = "https://github.com/gcarmix/haipy/archive/master.zip",
   project_urls = {
@@ -32,7 +32,8 @@ setup(
   # OPTIONS...
   entry_points = {'console_scripts': ['haipy=haipy.haipy:main']},
   include_package_data = True,
-  packages = ['haipy'],
+  install_requires = ['importlib_resources'],
+  packages = ['haipy','haipy.data'],
   package_dir = {'haipy': 'src/haipy'},
   package_data = {'haipy': ['data/*']},
 )

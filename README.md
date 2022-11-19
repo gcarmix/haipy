@@ -15,7 +15,7 @@ This project is a Python porting of "haiti" https://github.com/noraj/haiti writt
 ## Usage
 haipy [hash code to guess]
 
-![terminal view](https://github.com/gcarmix/haipy/blob/master/haipy_cli.png?raw=true)
+![terminal view](haipy_cli.png)
 
 ## Installation
 To install from the source directory:
