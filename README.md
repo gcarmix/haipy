@@ -1,4 +1,5 @@
 # Haipy
+![pylint](https://github.com/gcarmix/haipy/actions/workflows/pylint.yml/badge.svg)
 ## What is it?
 
 A CLI tool to identify hash types (hash type identifier).
