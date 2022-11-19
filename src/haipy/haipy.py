@@ -77,7 +77,7 @@ def main():
 
 
 
-    with open(files('haipy.data').joinpath('prototypes.json'),'rt') as protofile:
+    with open(files('haipy.data').joinpath('prototypes.json'),'rt',encoding='utf-8') as protofile:
         prototypes = json.load(protofile)
         if args.samples:
             for proto in prototypes:
@@ -100,7 +100,9 @@ def main():
                             else:
                                 john_str = ""
 
-                            lines.append({'name':mode['name'],'string': mode['name'] + hashcat_str + john_str})
+                            lines.append({
+                              'name':mode['name'],
+                              'string': mode['name'] + hashcat_str + john_str})
             lines.sort(key=check_common)
             for line in lines:
                 print(line['string'])
