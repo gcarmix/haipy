@@ -92,8 +92,7 @@ def main():
                     for mode in proto['modes']:
                         if mode['extended'] is False or args.extended:
                             if mode['hashcat'] is not None and not args.john_only :
-                                hashcat_str = colcyan + 
-                                " [HC: " + str(mode['hashcat']) + "]" + colend
+                                hashcat_str = colcyan + " [HC: " + str(mode['hashcat']) + "]" + colend
                             else:
                                 hashcat_str = ""
                             if mode['john'] is not None and not args.hashcat_only :
