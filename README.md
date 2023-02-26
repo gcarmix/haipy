@@ -25,7 +25,7 @@ haipy [hash code to guess]
 Haipy can be used as a Python Library like shown in the following snippet of code:
 
 ```
->>> import haipy as haipy
+>>> from haipy import haipy
 
 >>> haipy.detect("$6$qoE2letU$wWPRl.PVczjzeMVgjiA8LLy2nOyZbf7Amj3qLIL978o18gbMySdKZ7uepq9tmMQXxyTIrS12Pln.2Q/6Xscao0")
 
