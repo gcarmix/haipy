@@ -8,7 +8,7 @@ This project is a Python porting of "haiti" https://github.com/noraj/haiti writt
 
 ## Features
 
-- 483+ hash types detected
+- 500+ hash types detected
 - Modern algorithms supported (SHA3, Keccak, Blake2, etc.)
 - Hashcat and John the Ripper references
 - CLI tool
