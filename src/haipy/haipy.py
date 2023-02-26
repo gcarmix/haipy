@@ -12,10 +12,10 @@ import argparse
 import os
 #from pkg_resources import resource_filename
 from importlib_resources import files
-STR_VERSION = '1.0.3'
+STR_VERSION = '1.1.0'
 commons = [
   "MD5","SHA-1","SHA-256","SHA-512","bcrypt",
-  "NTLM","NetNTLMv2","NetNTLMv1-VANILLA / NetNTLMv1+ESS",
+  "NTLM","NT","NetNTLMv2","NetNTLMv1-VANILLA / NetNTLMv1+ESS",
   "BLAKE2-512","SHA3-224","SHA3-256","SHA3-512","Keccak-256",
   "Keccak-512","CRC-32B","CRC-32","CRC-16","CRC-64","GOST R 34.11-94",
   "Apache MD5","MD5(APR)","md5apr1","Domain Cached Credentials",
@@ -88,7 +88,7 @@ def main():
                         return
         else:
             for proto in prototypes:
-                if re.match(proto['regex'],args.hashcode):
+                if re.match(proto['regex'],args.hashcode.lower()):
                     for mode in proto['modes']:
                         if mode['extended'] is False or args.extended:
                             if mode['hashcat'] is not None and not args.john_only :
