@@ -12,7 +12,7 @@ import argparse
 import os
 #from pkg_resources import resource_filename
 from importlib_resources import files
-STR_VERSION = '1.1.0'
+STR_VERSION = '1.5.0'
 commons = [
   "MD5","SHA-1","SHA-256","SHA-512","bcrypt",
   "NTLM","NT","NetNTLMv2","NetNTLMv1-VANILLA / NetNTLMv1+ESS",
@@ -32,6 +32,34 @@ def check_common(line):
     if line['name'] in commons:
         return 1
     return 2
+
+def detect(hashcode,extended=False):
+    lines = []
+    with open(files('haipy.data').joinpath('prototypes.json'),'rt',encoding='utf-8') as protofile:
+        prototypes = json.load(protofile)
+
+        for proto in prototypes:
+            if re.match(proto['regex'],hashcode.lower()):
+                for mode in proto['modes']:
+                    if mode['extended'] is False or (extended == True):
+                        if mode['hashcat'] is not None:
+                            hashcat = mode['hashcat']
+                        else:
+                            hashcat = ''
+                        
+                        if mode['john'] is not None:
+                            john = mode['john']
+                        else:
+                            john = ''
+
+                        lines.append({
+                            'name':mode['name'],
+                            'hashcat': hashcat,
+                            'john': john})
+                        
+        lines.sort(key=check_common)
+        return lines
+
 
 def main():
     """main method"""
