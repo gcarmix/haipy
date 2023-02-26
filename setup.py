@@ -17,7 +17,7 @@ def read(fname):
 setup(
   # METADATA...
   name = 'haipy',
-  version = '1.5.0',
+  version = '1.5.1',
   url = 'https://github.com/gcarmix/haipy',
   download_url = "https://github.com/gcarmix/haipy/archive/master.zip",
   project_urls = {
