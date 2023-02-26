@@ -34,6 +34,7 @@ def check_common(line):
     return 2
 
 def detect(hashcode,extended=False):
+    """detect a hash type from its hashcode"""
     lines = []
     with open(files('haipy.data').joinpath('prototypes.json'),'rt',encoding='utf-8') as protofile:
         prototypes = json.load(protofile)
@@ -46,7 +47,7 @@ def detect(hashcode,extended=False):
                             hashcat = mode['hashcat']
                         else:
                             hashcat = ''
-                        
+
                         if mode['john'] is not None:
                             john = mode['john']
                         else:
@@ -56,7 +57,7 @@ def detect(hashcode,extended=False):
                             'name':mode['name'],
                             'hashcat': hashcat,
                             'john': john})
-                        
+
         lines.sort(key=check_common)
         return lines
 
